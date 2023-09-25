@@ -1,5 +1,38 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: grey;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 6%;
+}
+
+nav img{
+    width: 100px;
+}
+
+.nav-links{
+    text-align: right;
+}
+
+.nav-links ul li{
+    display: inline-block;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: white;
+    padding: 10px;
 }
