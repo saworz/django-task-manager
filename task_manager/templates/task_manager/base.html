@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'task_manager/style.css' %}">
+        <title>Task manager</title>
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="{% url 'task_manager:home-page' %}"><img src="{% static 'task_manager/notebook.png' %}"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="{% url 'task_manager:home-page' %}">Home</a></li>
+                        <li><a href="{% url 'task_manager:about-page' %}">About</a></li>
+                        <li><a href="{% url 'users:login' %}">Login</a></li>
+                        <li><a href="{% url 'users:register' %}">Register</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            {% block content %}{% endblock %}
+        </section>
+
+
+    </body>
+</html>

@@ -1,26 +1,10 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="{% static 'task_manager/style.css' %}">
-        <title>Task manager</title>
-    </head>
-    <body>
-        <section class="header">
-            <nav>
-                <a href=""><img src="{% static 'task_manager/notebook.png' %}"></a>
-                <div class="nav-links">
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Login</a></li>
-                        <li><a href="">Register</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </section>
-    </body>
-</html>
+{% extends 'task_manager/base.html' %}
+{% block content %}
+    <div class="text-box">
+        <h2 class="main-header">Task Manager</h2>
+        <p>Enjoy this super useful app to manage your tasks,
+            sort them by importance, deadline or days since created
+        </p>
+        <a href="" class="demo-button">Check out the demo</a>
+    </div>
+{% endblock %}
