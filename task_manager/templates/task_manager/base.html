@@ -16,8 +16,14 @@
                     <ul>
                         <li><a href="{% url 'task_manager:home-page' %}">Home</a></li>
                         <li><a href="{% url 'task_manager:about-page' %}">About</a></li>
-                        <li><a href="{% url 'users:login' %}">Login</a></li>
-                        <li><a href="{% url 'users:register' %}">Register</a></li>
+
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'users:profile' %}">My account</a></li>
+                            <li><a href="{% url 'users:logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'users:login' %}">Login</a></li>
+                            <li><a href="{% url 'users:register' %}">Register</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
