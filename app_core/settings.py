@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'task_manager.apps.TaskManagerConfig',
     'users.apps.UsersConfig',
+    'crispy_forms',
+    'crispy_bootstrap4',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
