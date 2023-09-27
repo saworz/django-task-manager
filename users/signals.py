@@ -6,6 +6,6 @@ from .models import Profile
 
 
 @receiver(post_save, sender=User)
-def user_created_handler(sender, instance, created, **kwargs):
+def user_post_save_receiver(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
