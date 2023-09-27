@@ -1,10 +1,17 @@
 {% extends 'task_manager/base.html' %}
 {% block content %}
-    <div class="text-box">
-        <h2 class="main-header">Task Manager</h2>
-        <p>Enjoy this super useful app to manage your tasks,
-            sort them by importance, deadline or days since created
-        </p>
-        <a href="" class="demo-button">Check out the demo</a>
-    </div>
+    {% if request.user.is_authenticated %}
+        <div class="text-box">
+            <h2 class="main-header">Task Manager</h2>
+            <p>Witam zalogowanego</p>
+        </div>
+    {% else %}
+        <div class="text-box">
+            <h2 class="main-header">Task Manager</h2>
+            <p>Enjoy this super useful app to manage your tasks,
+                sort them by importance, deadline or days since created
+            </p>
+            <a href="" class="demo-button">Check out the demo</a>
+        </div>
+    {% endif %}
 {% endblock %}

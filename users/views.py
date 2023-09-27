@@ -26,7 +26,6 @@ class LoginView(View):
     def post(self, request):
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            print('form valid')
             login(request, form.get_user())
             return render(request, 'task_manager/main_page.html')
         return render(request, 'users/login.html', {'form': form})
