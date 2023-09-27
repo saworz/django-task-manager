@@ -2,10 +2,23 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
-        <div class="text-box">
-            <h2 class="main-header">Task Manager</h2>
-            <p>Witam zalogowanego</p>
+        <div class="logged-header">
+            <h2>Active tasks</h2>
         </div>
+
+        <div class="add-task">
+            <a href="" class="demo-button">Add new task</a>
+        </div>
+
+        <div class="task-board">
+            {% for i in '123456789' %}
+                <div class="task-containers">
+                    <h3>TITLE</h3>
+                    <p>Description Description Description DescriptionDescriptionDescription</p>
+                </div>
+            {% endfor %}
+        </div>
+
     {% else %}
         <div class="text-box">
             <h2 class="main-header">Task Manager</h2>
