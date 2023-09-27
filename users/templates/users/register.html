@@ -1,5 +1,11 @@
 {% extends 'task_manager/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/style.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="form-box">
         <div class="content-section">
