@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'task_manager.apps.TaskManagerConfig',
     'users.apps.UsersConfig',
+    'tasks.apps.TasksConfig',
     'crispy_forms',
     'crispy_bootstrap4',
 

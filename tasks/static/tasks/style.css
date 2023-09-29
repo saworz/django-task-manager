@@ -1,0 +1,43 @@
+.text-box-div{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input, textarea{
+  border  : 1px solid lightgray;
+  padding : 0 10px;
+  background: none;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  resize: none;
+}
+
+#title {
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+textarea {
+  height: 60%;
+}
+
+.importance-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  margin-right: 10px;
+}
