@@ -84,11 +84,22 @@ nav img{
 }
 
 .task-board{
-    position: relative;
-    align-items: center;
-    margin-top: 80px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
+
+.tasks{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.pages{
+    display: inline-block;
+}
+
 .task-containers{
     width: 240px;
     height: 400px;

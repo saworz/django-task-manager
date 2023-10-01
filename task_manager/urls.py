@@ -5,6 +5,6 @@ from . import views
 
 app_name = "task_manager"
 urlpatterns = [
-    path('', views.HomePageView.as_view(), name="home-page"),
+    path('', views.TasksListView.as_view(), name="home-page"),
     path('about', views.AboutPageView.as_view(), name="about-page"),
 ]

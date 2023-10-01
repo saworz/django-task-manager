@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, ListView
 from datetime import datetime, timedelta
 from .forms import AddTaskForm
+from .models import Tasks
 
 
 class AddTaskView(View):
@@ -9,7 +10,6 @@ class AddTaskView(View):
     default_date = (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d')
 
     def get(self, request):
-        form = AddTaskForm()
         default_date = (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d')
         return render(request, self.template_name,
                       {'default_date': self.default_date})
