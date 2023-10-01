@@ -17,21 +17,13 @@ class AddTaskView(View):
     def post(self, request):
         form = AddTaskForm(request.POST)
         if form.is_valid():
+            form.save()
             return redirect('task_manager:home-page')
         return render(request, self.template_name, {'default_date': self.default_date})
 
-class SaveTaskView(View):
-    def post(self, request):
-        form = AddTaskForm(request.POST)
-        print(request.POST)
-        if form.is_valid():
-            print('valid')
-            return redirect('task_manager:home-page')
-
-        print('not valid')
-        return render(request,  'tasks/add_task.html', {'form': form})
-
 
 class EditTaskView(View):
+    template_name = "tasks/edit_task.html"
+
     def get(self, request):
-        return render(request, 'tasks/edit_task.html')
+        return render(request, self.template_name)

@@ -11,10 +11,11 @@
         </div>
 
         <div class="task-board">
-            {% for i in '123456789' %}
+            {% for task in tasks %}
                 <div class="task-containers">
-                    <h3>TITLE</h3>
-                    <p>Description Description Description DescriptionDescriptionDescription</p>
+                    <h3>{{task.title}}</h3>
+                    <p>{{task.deadline}}</p>
+                    <p>{{task.description}}</p>
                 </div>
             {% endfor %}
         </div>

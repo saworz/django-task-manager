@@ -84,24 +84,22 @@ nav img{
 }
 
 .task-board{
-    position: absolute;
+    position: relative;
     align-items: center;
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 50px;
-    top: 25%;
+    margin-top: 80px;
+    display: flex;
 }
 .task-containers{
-    display: inline-block;
     width: 250px;
-    height: 440px;
+    height: 400px;
+    margin: 15px;
     border: 2px solid white;
     border-radius: 20px;
-    margin: 10px 10px;
     color: white;
     text-align: center;
-    padding: 10px;
-    overflow-wrap: break-word;
+    padding: 20px;
 }
 
 .add-task{
