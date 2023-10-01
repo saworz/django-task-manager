@@ -1,3 +1,14 @@
+.task-containers{
+    width: 240px;
+    height: 400px;
+    margin: 15px;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    padding: 0;
+}
+
 .text-box-div{
     color: white;
     position: absolute;
@@ -16,14 +27,14 @@ input, textarea{
   padding : 0 10px;
   background: none;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border-radius: 10px;
   resize: none;
 }
 
 #title {
   font-size: 26px;
-  width: 100%;
+  width: 95%;
   text-align: center;
 }
 
@@ -32,14 +43,19 @@ p {
 }
 
 textarea {
-  height: 60%;
+  height: 53%;
 }
 
 .importance-container {
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
+  border: 1px solid lightgray;
+  border-radius: 10px;
 }
 
+.importance-container p{
+    border: none;
+}
 .importance-container input {
     cursor: pointer;
 }
@@ -51,4 +67,7 @@ label {
 .save-task {
     text-align: center;
     margin-top: 20px;
+}
+
+.radios{
 }

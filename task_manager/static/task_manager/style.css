@@ -86,13 +86,11 @@ nav img{
 .task-board{
     position: relative;
     align-items: center;
-    padding-left: 30px;
-    padding-right: 30px;
     margin-top: 80px;
     display: flex;
 }
 .task-containers{
-    width: 250px;
+    width: 240px;
     height: 400px;
     margin: 15px;
     border: 2px solid white;
