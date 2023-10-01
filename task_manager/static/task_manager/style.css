@@ -102,6 +102,28 @@ nav img{
     padding: 20px;
 }
 
+.task-containers p{
+  border  : 1px solid lightgray;
+  padding : 0 10px;
+  background: none;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  resize: none;
+}
+
+
+.task-containers h3{
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+}
+
+.description {
+    height: 250px;
+}
 .add-task{
     position: absolute;
     top: 20%;

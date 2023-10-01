@@ -14,8 +14,9 @@
             {% for task in tasks %}
                 <div class="task-containers">
                     <h3>{{task.title}}</h3>
-                    <p>{{task.deadline}}</p>
-                    <p>{{task.description}}</p>
+                    <p>Deadline: {{task.deadline}}</p>
+                    <p class="description">{{task.description}}</p>
+                    <p>Importance: {{task.importance}}</p>
                 </div>
             {% endfor %}
         </div>
