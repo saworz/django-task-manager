@@ -5,8 +5,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    display: flex;
     flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 input, textarea{
@@ -38,6 +40,15 @@ textarea {
   justify-content: space-between;
 }
 
+.importance-container input {
+    cursor: pointer;
+}
+
 label {
   margin-right: 10px;
+}
+
+.save-task {
+    text-align: center;
+    margin-top: 20px;
 }

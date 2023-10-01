@@ -5,30 +5,37 @@
 {% endblock %}
 
 {% block content %}
-    <div class="text-box-div">
-        <div class="task-containers">
-            <label for="title"></label>
-            <input type="text" id="title" name="title" value="Task title">
+    <form action="{% url 'tasks:add-task' %}" method="post">
+        {% csrf_token %}
+        <div class="text-box-div">
+            <div class="task-containers">
+                <label for="title"></label>
+                <input type="text" id="title" name="title" value="Task title">
 
-            <label for="deadline"></label>
-            <input type="date" id="deadline" name="deadline" value="Add deadline">
+                <label for="deadline"></label>
+                <input type="date" id="deadline" name="deadline" value="{{default_date}}">
 
-            <label for="description"></label>
-            <textarea id="description" name="description">That's the place for task description...</textarea>
+                <label for="description"></label>
+                <textarea id="description" name="description">That's the place for task description...</textarea>
 
-            <p>Importance</p>
-            <div class="importance-container">
-              <label>
-                <input type="radio" name="importance" value="LOW"> Low
-              </label>
-              <label>
-                <input type="radio" name="importance" value="MEDIUM" checked> Medium
-              </label>
-              <label>
-                <input type="radio" name="importance" value="HIGH"> High
-              </label>
+                <p>Importance</p>
+                <div class="importance-container">
+                  <label>
+                    <input type="radio" name="importance" value="low"> Low
+                  </label>
+                  <label>
+                    <input type="radio" name="importance" value="medium" checked> Medium
+                  </label>
+                  <label>
+                    <input type="radio" name="importance" value="low"> High
+                  </label>
+                </div>
+
+            </div>
+            <div class="save-task">
+                <input type="submit" class="demo-button" value="Save task">
             </div>
 
         </div>
-    </div>
+    </form>
 {% endblock %}
