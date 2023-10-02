@@ -5,40 +5,46 @@
 {% endblock %}
 
 {% block content %}
-    <form action="{% url 'tasks:add-task' %}" method="post">
-        {% csrf_token %}
-        <div class="text-box-div">
-            <div class="task-containers">
-                <label for="title"></label>
-                <input type="text" id="title" name="title" value="Task title">
-
-                <label for="deadline"></label>
-                <input type="date" id="deadline" name="deadline" value="{{default_date}}">
-
-                <label for="description"></label>
-                <textarea id="description" name="description">That's the place for task description...</textarea>
-
-
-                <div class="importance-container">
-                  <p>Importance</p>
-                    <div class="radios">
-                  <label>
-                    <input type="radio" name="importance" value="low"> Low
-                  </label>
-                  <label>
-                    <input type="radio" name="importance" value="medium" checked> Medium
-                  </label>
-                  <label>
-                    <input type="radio" name="importance" value="low"> High
-                  </label>
-                        </div>
-                </div>
-
-            </div>
-            <div class="save-task">
-                <input type="submit" class="demo-button" value="Save task">
-            </div>
-
+        <div class="logged-header">
+            <h2>Add task</h2>
         </div>
-    </form>
+        <div class="task-board">
+
+            <form action="{% url 'tasks:add-task' %}" method="post">
+                {% csrf_token %}
+                <div class="tasks">
+                <div class="task-containers-create">
+                    <label for="title"></label>
+                    <input type="text" id="title" name="title" value="Task title">
+
+                    <label for="deadline"></label>
+                    <input type="date" id="deadline" name="deadline" value="{{form.initial.deadline}}">
+
+                    <label for="description"></label>
+                    <textarea id="description" name="description">That's the place for task description...</textarea>
+
+
+                    <div class="importance-container">
+                      <p>Importance</p>
+                        <div class="radios">
+                      <label>
+                        <input type="radio" name="importance" value="low"> Low
+                      </label>
+                      <label>
+                        <input type="radio" name="importance" value="medium" checked> Medium
+                      </label>
+                      <label>
+                        <input type="radio" name="importance" value="high"> High
+                      </label>
+                            </div>
+                    </div>
+
+                </div>
+                </div>
+                <div class="save-task">
+                    <input type="submit" class="demo-button" value="Save task">
+                </div>
+            </form>
+        </div>
+
 {% endblock %}

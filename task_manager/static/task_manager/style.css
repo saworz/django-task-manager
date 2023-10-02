@@ -76,11 +76,8 @@ nav img{
 
 .logged-header{
     color: white;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .task-board{
@@ -91,7 +88,7 @@ nav img{
 }
 
 .tasks{
-    margin-top: 40px;
+    /*margin-top: 40px;*/
     display: flex;
     justify-content: center;
 }
@@ -107,7 +104,7 @@ nav img{
     border: 2px solid white;
     border-radius: 20px;
     color: white;
-    text-align: center;
+    /*text-align: center;*/
     padding: 20px;
     text-decoration: none;
 }

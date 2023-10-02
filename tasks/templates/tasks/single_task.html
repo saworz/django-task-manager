@@ -1,0 +1,25 @@
+{% extends 'task_manager/base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="logged-header">
+        <h2>Task view</h2>
+    </div>
+    <div class="task-board">
+        <div class="tasks">
+        <div class="task-containers">
+            <h3>{{object.title}}</h3>
+            <p>Deadline: {{object.deadline}}</p>
+            <p class="description">{{object.description}}</p>
+            <p>Importance: {{object.importance}}</p>
+        </div>
+        </div>
+        <div class="save-task">
+            <a href="" class="demo-button">Delete task</a>
+            <a href="" class="demo-button">Edit task</a>
+        </div>
+    </div>
+{% endblock %}

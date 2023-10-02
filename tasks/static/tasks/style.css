@@ -1,33 +1,9 @@
-.task-containers{
-    width: 240px;
-    height: 400px;
-    margin: 15px;
-    border: 2px solid white;
-    border-radius: 20px;
-    color: white;
-    text-align: center;
-    padding: 0;
-}
-
-.text-box-div{
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 input, textarea{
   border  : 1px solid lightgray;
   padding : 0 10px;
+  margin-bottom: 5px;
   background: none;
   color: white;
-  margin-bottom: 5px;
   border-radius: 10px;
   resize: none;
 }
@@ -38,12 +14,18 @@ input, textarea{
   text-align: center;
 }
 
-p {
-  margin: 0;
-}
-
 textarea {
   height: 53%;
+}
+
+.task-containers-create {
+    width: 240px;
+    height: 400px;
+    margin: 15px;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 .importance-container {
@@ -67,7 +49,4 @@ label {
 .save-task {
     text-align: center;
     margin-top: 20px;
-}
-
-.radios{
 }
