@@ -22,8 +22,8 @@ class AddTaskView(View):
         return render(request, self.template_name, {'default_date': self.default_date})
 
 
-class EditTaskView(View):
+class TaskView(View):
     template_name = "tasks/edit_task.html"
 
-    def get(self, request):
+    def get(self, request, pk):
         return render(request, self.template_name)

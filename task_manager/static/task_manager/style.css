@@ -109,6 +109,7 @@ nav img{
     color: white;
     text-align: center;
     padding: 20px;
+    text-decoration: none;
 }
 
 .task-containers p{
@@ -121,6 +122,10 @@ nav img{
   resize: none;
 }
 
+a.task-containers:hover{
+    text-decoration: none;
+    color: white;
+}
 
 .task-containers h3{
   border: 1px solid lightgray;

@@ -13,12 +13,18 @@
         <div class="task-board">
             <div class="tasks">
             {% for task in tasks %}
-                <div class="task-containers">
+<!--                <div class="task-containers">-->
+<!--                    <h3>{{task.title}}</h3>-->
+<!--                    <p>Deadline: {{task.deadline}}</p>-->
+<!--                    <p class="description">{{task.description}}</p>-->
+<!--                    <p>Importance: {{task.importance}}</p>-->
+<!--                </div>-->
+                <a href="{% url 'tasks:task-view' pk=task.pk %}" class="task-containers">
                     <h3>{{task.title}}</h3>
                     <p>Deadline: {{task.deadline}}</p>
                     <p class="description">{{task.description}}</p>
                     <p>Importance: {{task.importance}}</p>
-                </div>
+                </a>
             {% endfor %}
             </div>
             <div class="pages">
