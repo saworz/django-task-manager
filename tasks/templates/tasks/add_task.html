@@ -14,15 +14,52 @@
                 {% csrf_token %}
                 <div class="tasks">
                 <div class="task-containers-create">
-                    <label for="title"></label>
-                    <input type="text" id="title" name="title" value="Task title">
+                    {% if object %}
+                        <label for="title_edit"></label>
+                        <input type="text" id="title_edit" name="title" value="{{object.title}}">
 
-                    <label for="deadline"></label>
-                    <input type="date" id="deadline" name="deadline" value="{{form.initial.deadline}}">
+                        <label for="deadline_edit"></label>
+                        <input type="date" id="deadline_edit" name="deadline" value="{{object.deadline|date:'Y-m-d'}}">
 
-                    <label for="description"></label>
-                    <textarea id="description" name="description">That's the place for task description...</textarea>
+                        <label for="description_edit"></label>
+                        <textarea id="description_edit" name="description">{{object.description}}</textarea>
 
+                    <div class="importance-container">
+                      <p>Importance</p>
+                        <div class="radios">
+                      <label>
+                        {% if object.importance == "low" %}
+                          <input type="radio" name="importance" value="low" checked> Low
+                        {% else %}
+                          <input type="radio" name="importance" value="low"> Low
+                        {% endif %}
+                      </label>
+                      <label>
+                        {% if object.importance == "medium" %}
+                          <input type="radio" name="importance" value="medium" checked> Medium
+                        {% else %}
+                          <input type="radio" name="importance" value="medium"> Medium
+                        {% endif %}
+                      </label>
+                      <label>
+                        {% if object.importance == "high" %}
+                          <input type="radio" name="importance" value="high" checked> High
+                        {% else %}
+                          <input type="radio" name="importance" value="high"> High
+                        {% endif %}
+                      </label>
+                            </div>
+                    </div>
+
+                    {% else %}
+                        <label for="title"></label>
+                        <input type="text" id="title" name="title" value="Task title">
+
+                        <label for="deadline"></label>
+                        <input type="date" id="deadline" name="deadline" value="{{form.initial.deadline}}">
+
+                        <label for="description"></label>
+                        <textarea id="description" name="description">That's the place for task description...</textarea>
 
                     <div class="importance-container">
                       <p>Importance</p>
@@ -38,6 +75,7 @@
                       </label>
                             </div>
                     </div>
+                    {% endif %}
 
                 </div>
                 </div>

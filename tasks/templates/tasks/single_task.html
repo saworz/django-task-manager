@@ -19,7 +19,7 @@
         </div>
         <div class="save-task">
             <a href="" class="demo-button">Delete task</a>
-            <a href="" class="demo-button">Edit task</a>
+            <a href="{% url 'tasks:update-task' pk=object.pk %}" class="demo-button">Edit task</a>
         </div>
     </div>
 {% endblock %}
