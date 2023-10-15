@@ -59,6 +59,7 @@ nav img{
     border: 2px solid white;
     padding: 10px 15px;
     border-radius: 20px;
+    margin-bottom: 5px;
 }
 
 .demo-button:hover{

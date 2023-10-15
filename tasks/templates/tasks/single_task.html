@@ -18,8 +18,11 @@
         </div>
         </div>
         <div class="save-task">
-            <a href="" class="demo-button">Delete task</a>
             <a href="{% url 'tasks:update-task' pk=object.pk %}" class="demo-button">Edit task</a>
+            <form method="POST" action="{% url 'tasks:delete-task' pk=object.pk %}">
+                {% csrf_token %}
+                <input type="submit" value="Delete" class="demo-button">
+            </form>
         </div>
     </div>
 {% endblock %}

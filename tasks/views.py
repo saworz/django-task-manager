@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from datetime import datetime, timedelta
 from .forms import AddTaskForm
 from .models import Tasks
+from django.urls import reverse_lazy
 
 
 class AddTaskView(LoginRequiredMixin, CreateView):
@@ -31,4 +32,11 @@ class TaskDetailView(DetailView):
 
 
 class DeleteTaskView(DeleteView):
-    template_name = ""
+    model = Tasks
+    success_url = reverse_lazy("task_manager:home-page")
+
+    def get_queryset(self):
+        return self.model.objects.filter(pk=self.kwargs["pk"])
+
+    def get_success_url(self):
+        return self.success_url
