@@ -78,7 +78,12 @@ nav img{
 .logged-header{
     color: white;
     display: flex;
-    justify-content: center;
+}
+
+.logged-header h2{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .task-board{
@@ -145,4 +150,8 @@ a.task-containers:hover{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.sorting {
+    color: white;
 }
