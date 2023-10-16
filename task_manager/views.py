@@ -11,6 +11,9 @@ class TasksListView(ListView):
     paginate_by = 5
     ordering = "deadline"
 
+    def get_queryset(self):
+        return Tasks.objects.filter(author=self.request.user)
+
 
 class AboutPageView(TemplateView):
     template_name = 'task_manager/about.html'
