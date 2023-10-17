@@ -8,6 +8,9 @@ models/
 __pycache__/
 *.py[cod]
 
+# Media
+media/profile_pics/
+
 # C extensions
 *.so
 
