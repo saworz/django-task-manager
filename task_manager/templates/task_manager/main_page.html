@@ -7,10 +7,11 @@
         </div>
 
         <div class="task-board">
-                                    <div class="logged-header">
-            <h2>Active tasks</h2>
-        </div>
-            <div class="tasks">
+            <div class="logged-header">
+                <h2>Active tasks</h2>
+
+                </div>
+        <div class="tasks">
 
             {% for task in tasks %}
                 <a href="{% url 'tasks:task-view' pk=task.pk %}" class="task-containers">
@@ -21,6 +22,7 @@
                 </a>
             {% endfor %}
             </div>
+
             <div class="pages">
             {% if is_paginated %}
                   {% if page_obj.has_previous %}
@@ -44,7 +46,29 @@
 
             {% endif %}
             </div>
-        </div>
+                <div class="sorting">
+                    <p>Sort by</p>
+                    <div class="radios">
+                        <form id="sort-form">
+                            <button type="radio" name="sort" value="deadline"
+                                    class="btn btn-primary">Deadline</button>
+                            <button type="radio" name="sort" value="title"
+                                    class="btn btn-primary">Title</button>
+                            <button type="radio" name="sort" value="importance"
+                                    class="btn btn-primary">Importance</button>
+<!--                          <label>-->
+<!--                            <input type="radio" name="sort_by" value="deadline" checked> Deadline-->
+<!--                          </label>-->
+<!--                          <label>-->
+<!--                            <input type="radio" name="sort_by" value="title"> Title-->
+<!--                          </label>-->
+<!--                          <label>-->
+<!--                            <input type="radio" name="sort_by" value="importance"> Importance-->
+<!--                          </label>-->
+                        </form>
+                    </div>
+                </div>
+            </div>
 
     {% else %}
         <div class="text-box">
