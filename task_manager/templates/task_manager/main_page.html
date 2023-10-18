@@ -10,42 +10,42 @@
             <div class="logged-header">
                 <h2>Active tasks</h2>
 
-                </div>
-        <div class="tasks">
+            </div>
+            <div class="tasks">
 
-            {% for task in tasks %}
-                <a href="{% url 'tasks:task-view' pk=task.pk %}" class="task-containers">
-                    <h3>{{task.title}}</h3>
-                    <p>Deadline: {{task.deadline}}</p>
-                    <p class="description">{{task.description}}</p>
-                    <p>Importance: {{task.importance}}</p>
-                </a>
-            {% endfor %}
+                {% for task in tasks %}
+                    <a href="{% url 'tasks:task-view' pk=task.pk %}" class="task-containers">
+                        <h3>{{task.title}}</h3>
+                        <p>Deadline: {{task.deadline}}</p>
+                        <p class="description">{{task.description}}</p>
+                        <p>Importance: {{task.importance}}</p>
+                    </a>
+                {% endfor %}
             </div>
 
             <div class="pages">
-            {% if is_paginated %}
-                  {% if page_obj.has_previous %}
-                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                  {% endif %}
+                {% if is_paginated %}
+                      {% if page_obj.has_previous %}
+                        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                      {% endif %}
 
-                  {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                      <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                      <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                    {% endif %}
-                  {% endfor %}
+                      {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                      {% endfor %}
 
-                  {% if page_obj.has_next %}
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                  {% endif %}
+                      {% if page_obj.has_next %}
+                        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                      {% endif %}
 
 
             {% endif %}
-            </div>
+        </div>
                 <div class="sorting">
                     <p>Sort by</p>
                     <div class="radios">
@@ -56,15 +56,6 @@
                                     class="btn btn-primary">Title</button>
                             <button type="radio" name="sort" value="importance"
                                     class="btn btn-primary">Importance</button>
-<!--                          <label>-->
-<!--                            <input type="radio" name="sort_by" value="deadline" checked> Deadline-->
-<!--                          </label>-->
-<!--                          <label>-->
-<!--                            <input type="radio" name="sort_by" value="title"> Title-->
-<!--                          </label>-->
-<!--                          <label>-->
-<!--                            <input type="radio" name="sort_by" value="importance"> Importance-->
-<!--                          </label>-->
                         </form>
                     </div>
                 </div>
