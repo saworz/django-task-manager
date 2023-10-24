@@ -12,7 +12,7 @@ class TasksListView(ListView):
     ordering = "deadline"
 
     def get_queryset(self):
-        return Tasks.objects.filter(author=self.request.user).order_by(self.ordering)
+        return Tasks.objects.filter(author=self.request.user.pk).order_by(self.ordering)
 
     def get(self, request, *args, **kwargs):
         if request.GET.get("sort"):
