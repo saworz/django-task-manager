@@ -33,7 +33,6 @@ class TasksListView(ListView):
 
         return queryset
 
-
     def get(self, request, *args, **kwargs):
         current_ordering = self.request.GET.get('sort')
         if current_ordering:
@@ -42,7 +41,6 @@ class TasksListView(ListView):
             else:
                 self.request.session["ordering"] = current_ordering
         self.object_list = self.get_queryset()
-        # allow_empty = self.get_allow_empty()
         context = self.get_context_data()
         return self.render_to_response(context)
 
