@@ -23,9 +23,6 @@ class TasksListView(ListView):
         return self.IMPORTANCE_MAPPING.get(task.importance, 0)
 
     def get_queryset(self):
-<<<<<<< HEAD
-        return Tasks.objects.filter(author=self.request.user.pk).order_by(self.ordering)
-=======
         ordering = self.request.session.get('ordering', "deadline")
         queryset = Tasks.objects.filter(author=self.request.user.pk)
 
@@ -35,7 +32,6 @@ class TasksListView(ListView):
             queryset = queryset.order_by(ordering)
 
         return queryset
->>>>>>> tasks
 
     def get(self, request, *args, **kwargs):
         current_ordering = self.request.GET.get('sort')
