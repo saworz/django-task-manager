@@ -5,24 +5,31 @@
 {% endblock %}
 
 {% block content %}
-    <div class="logged-header">
-        <h2>Task view</h2>
-    </div>
-    <div class="task-board">
-        <div class="tasks">
-        <div class="task-containers">
-            <h3>{{object.title}}</h3>
-            <p>Deadline: {{object.deadline}}</p>
-            <p class="description">{{object.description}}</p>
-            <p>Importance: {{object.importance}}</p>
+        <div class="tasks-header-div">
+            <h1>Task view</h1>
         </div>
+
+        <div class="task-view-div">
+            <div class="task-title-div">
+                <h2>{{object.title}}</h2>
+            </div>
+            <div class="task-deadline-div">
+                <p>Deadline: {{object.deadline}}</p>
+            </div>
+            <div class="task-description-div">
+                <p class="description">{{object.description}}</p>
+            </div>
+            <div class="task-deadline-div">
+                <p>Importance: {{object.importance}}</p>
+            </div>
         </div>
-        <div class="save-task">
+
+        <div class="task-buttons-div">
             <a href="{% url 'tasks:edit-task' pk=object.pk %}" class="demo-button">Edit task</a>
             <form method="POST" action="{% url 'tasks:delete-task' pk=object.pk %}">
                 {% csrf_token %}
                 <input type="submit" value="Delete" class="demo-button">
             </form>
         </div>
-    </div>
+
 {% endblock %}

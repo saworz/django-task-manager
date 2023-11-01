@@ -105,7 +105,9 @@
 
 
 .add-task-div,
-.display-task-div {
+.edit-task-div,
+.display-task-div,
+.task-view-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,6 +144,10 @@
     font-size: 20px;
 }
 
+.task-deadline-div p {
+    padding-top: 10px;
+}
+
 .task-description-div {
     height: 200px;
     display: block;
@@ -176,86 +182,9 @@
     text-decoration: none;
 }
 
-/*.main-header {*/
-/*    font-size: 40px;*/
-/*}*/
-
-/*.logged-header {*/
-/*    display: flex;*/
-/*    color: white;*/
-/*}*/
-
-/*.logged-header h2 {*/
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.task-board {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.tasks {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
-
-/*.pages {*/
-/*    display: inline-block;*/
-/*}*/
-
-/*.task-containers {*/
-/*    width: 240px;*/
-/*    height: 400px;*/
-/*    margin: 15px;*/
-/*    border: 2px solid white;*/
-/*    border-radius: 20px;*/
-/*    color: white;*/
-/*    padding: 20px;*/
-/*    text-decoration: none;*/
-/*    background: rgba(255, 255, 255, 0.1);*/
-/*}*/
-
-/*.task-containers p {*/
-/*    border: 1px solid lightgray;*/
-/*    padding: 0 10px;*/
-/*    background: none;*/
-/*    color: white;*/
-/*    margin: 10px 0;*/
-/*    border-radius: 10px;*/
-/*    resize: none;*/
-/*    background: rgba(0, 0, 0, 0.2);*/
-/*}*/
-
-/*.task-containers:hover {*/
-/*    text-decoration: none;*/
-/*    color: white;*/
-/*}*/
-
-/*.task-containers h3 {*/
-/*    border: 1px solid lightgray;*/
-/*    border-radius: 10px;*/
-/*    font-size: 26px;*/
-/*    text-align: center;*/
-/*    background: rgba(0, 0, 0, 0.2);*/
-/*}*/
-
-/*.description {*/
-/*    height: 250px;*/
-/*}*/
-
-/*.add-task {*/
-/*    position: absolute;*/
-/*    top: 20%;*/
-/*    left: 90%;*/
-/*    transform: translate(-50%, -50%);*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.sorting {*/
-/*    color: white;*/
-/*}*/
+.pages-buttons-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

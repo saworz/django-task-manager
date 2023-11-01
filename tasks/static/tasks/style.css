@@ -22,55 +22,14 @@ input, textarea {
     margin-top: 20px;
 }
 
-/*input, textarea{*/
-/*  border  : 1px solid lightgray;*/
-/*  padding : 0 10px;*/
-/*  margin-bottom: 5px;*/
-/*  background: none;*/
-/*  color: white;*/
-/*  border-radius: 10px;*/
-/*  resize: none;*/
-/*}*/
+.task-buttons-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 
-/*#title, #title_edit{*/
-/*  font-size: 26px;*/
-/*  width: 95%;*/
-/*  text-align: center;*/
-/*}*/
-
-/*textarea {*/
-/*  height: 53%;*/
-/*}*/
-
-/*.task-containers-create {*/
-/*    width: 240px;*/
-/*    height: 400px;*/
-/*    margin: 15px;*/
-/*    border: 2px solid white;*/
-/*    border-radius: 20px;*/
-/*    color: white;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*.importance-container {*/
-/*  display: inline-block;*/
-/*  justify-content: space-between;*/
-/*  border: 1px solid lightgray;*/
-/*  border-radius: 10px;*/
-/*}*/
-
-/*.importance-container p{*/
-/*    border: none;*/
-/*}*/
-/*.importance-container input {*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*label {*/
-/*  margin-right: 10px;*/
-/*}*/
-
-/*.save-task {*/
-/*    text-align: center;*/
-/*    margin-top: 20px;*/
-/*}*/
+.task-buttons-div a, input {
+    margin-bottom: 10px;
+}

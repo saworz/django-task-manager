@@ -6,10 +6,6 @@
             <h1>Active tasks</h1>
         </div>
 
-        <div class="tasks-row-div">
-
-        </div>
-
         <div class="active-tasks-div">
             {% for task in tasks %}
                 <a href="{% url 'tasks:task-view' pk=task.pk %}" class="display-task-div">
@@ -29,11 +25,33 @@
             {% endfor %}
         </div>
 
+        <div class="pages-buttons-div">
+            {% if is_paginated %}
+                  {% if page_obj.has_previous %}
+                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                  {% endif %}
+
+                  {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                      <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                      <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                  {% endfor %}
+
+                  {% if page_obj.has_next %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                  {% endif %}
+            {% endif %}
+        </div>
 
         {% if tasks %}
             <div class="sorting-text-div">
                 <p>Sort by</p>
             </div>
+
             <div class="sort-buttons-div">
                 <form id="sort-form">
                     <button type="radio" name="sort" value="deadline"
@@ -46,59 +64,19 @@
             </div>
         {% endif %}
 
-<!--        <div class="task-board">-->
-<!--            <div class="logged-header">-->
-<!--                <h2>Active tasks</h2>-->
-
-<!--            </div>-->
-<!--            <div class="tasks">-->
-
-<!--                {% for task in tasks %}-->
-<!--                    <a href="{% url 'tasks:task-view' pk=task.pk %}" class="task-containers">-->
-<!--                        <h3>{{task.title}}</h3>-->
-<!--                        <p>Deadline: {{task.deadline}}</p>-->
-<!--                        <p class="description">{{task.description}}</p>-->
-<!--                        <p>Importance: {{task.importance}}</p>-->
-<!--                    </a>-->
-<!--                {% endfor %}-->
-<!--            </div>-->
-
-<!--            <div class="pages">-->
-<!--                {% if is_paginated %}-->
-<!--                      {% if page_obj.has_previous %}-->
-<!--                        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>-->
-<!--                        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>-->
-<!--                      {% endif %}-->
-
-<!--                      {% for num in page_obj.paginator.page_range %}-->
-<!--                        {% if page_obj.number == num %}-->
-<!--                          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>-->
-<!--                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}-->
-<!--                          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>-->
-<!--                        {% endif %}-->
-<!--                      {% endfor %}-->
-
-<!--                      {% if page_obj.has_next %}-->
-<!--                        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>-->
-<!--                        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>-->
-<!--                      {% endif %}-->
-
-
-<!--            {% endif %}-->
-
     {% else %}
         <div class="tasks-header-div">
             <h1 class="main-header">Task Manager</h1>
         </div>
+
         <div class="home-page-info">
             <p>Enjoy this super useful app to manage your tasks,</p>
             <p>sort them by importance, deadline or days since create.</p>
         </div>
+
         <div class="demo-button-div">
             <a href="https://youtu.be/xOa42W7LWs4" class="demo-button" target="_blank">Check out the demo</a>
         </div>
-
-
 
     {% endif %}
 {% endblock %}
