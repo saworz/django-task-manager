@@ -8,6 +8,16 @@
     width: 400px;
 }
 
+@media (max-width: 460px), (max-height: 850px) {
+    .form-box {
+        width: 250px;
+    }
+
+    .text-muted {
+        display: none;
+    }
+}
+
 .form-box img{
     width: 200px;
 }
