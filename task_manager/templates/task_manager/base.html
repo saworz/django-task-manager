@@ -7,27 +7,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static 'task_manager/style.css' %}">
-        <link rel="shortcut icon" type="image/png" href="{% static 'task_manager/notebook.png' %}"/>
         <title>Task manager</title>
         {% block head %}{% endblock %}
     </head>
     <body>
         <section class="header">
             <nav>
-                <a href="{% url 'task_manager:home-page' %}"><img src="{% static 'task_manager/notebook.png' %}"></a>
-                <div class="nav-links">
-                    <ul>
-                        <li><a href="{% url 'task_manager:home-page' %}">Home</a></li>
-                        <li><a href="{% url 'task_manager:about-page' %}">About</a></li>
+                <div class="navigation-div">
+                        <ul>
+                            <li><a href="{% url 'task_manager:home-page' %}">Home</a></li>
+                            <li><a href="{% url 'task_manager:about-page' %}">About</a></li>
 
-                        {% if user.is_authenticated %}
-                            <li><a href="{% url 'users:profile' %}">My account</a></li>
-                            <li><a href="{% url 'users:logout' %}">Logout</a></li>
-                        {% else %}
-                            <li><a href="{% url 'users:login' %}">Login</a></li>
-                            <li><a href="{% url 'users:register' %}">Register</a></li>
-                        {% endif %}
-                    </ul>
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'users:profile' %}">My account</a></li>
+                                <li><a href="{% url 'users:logout' %}">Logout</a></li>
+                            {% else %}
+                                <li><a href="{% url 'users:login' %}">Login</a></li>
+                                <li><a href="{% url 'users:register' %}">Register</a></li>
+                            {% endif %}
+                        </ul>
                 </div>
             </nav>
             {% block content %}{% endblock %}
