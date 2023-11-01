@@ -103,7 +103,9 @@
     justify-content: center;
 }
 
-.task-div {
+
+.add-task-div,
+.display-task-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,6 +156,24 @@
 
 .task-importance-div p {
     margin-bottom: 0;
+}
+
+.active-tasks-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.display-task-div {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.display-task-div:hover {
+    text-decoration: none;
 }
 
 /*.main-header {*/

@@ -10,6 +10,26 @@
 
         </div>
 
+        <div class="active-tasks-div">
+            {% for task in tasks %}
+                <a href="{% url 'tasks:task-view' pk=task.pk %}" class="display-task-div">
+                    <div class="task-title-div">
+                        <h2>{{task.title}}</h2>
+                    </div>
+                    <div class="task-deadline-div">
+                        <p>Deadline: {{task.deadline}}</p>
+                    </div>
+                    <div class="task-description-div">
+                        <p class="description">{{task.description}}</p>
+                    </div>
+                    <div class="task-deadline-div">
+                        <p>Importance: {{task.importance}}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+
+
         {% if tasks %}
             <div class="sorting-text-div">
                 <p>Sort by</p>
