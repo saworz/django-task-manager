@@ -5,88 +5,199 @@
 {% endblock %}
 
 {% block content %}
-        <div class="logged-header">
-            <h2>Add task</h2>
+        <div class="tasks-header-div">
+            <h1>Add task</h1>
         </div>
-        <div class="task-board">
 
-            {% if update %}
-                <form action="{% url 'tasks:edit-task' pk=object.pk %}" method="post">
-            {% else %}
-                <form action="{% url 'tasks:add-task' %}" method="post">
-            {% endif %}
-                {% csrf_token %}
-                <div class="tasks">
-                <div class="task-containers-create">
-                    {% if object %}
-                        <label for="title_edit"></label>
-                        <input type="text" id="title_edit" name="title" value="{{object.title}}">
+        {% if update %}
+            <form action="{% url 'tasks:edit-task' pk=object.pk %}" method="post">
+        {% else %}
+            <form action="{% url 'tasks:add-task' %}" method="post">
+        {% endif %}
+        {% csrf_token %}
 
-                        <label for="deadline_edit"></label>
-                        <input type="date" id="deadline_edit" name="deadline" value="{{object.deadline|date:'Y-m-d'}}">
-
-                        <label for="description_edit"></label>
-                        <textarea id="description_edit" name="description">{{object.description}}</textarea>
-
-                    <div class="importance-container">
-                      <p>Importance</p>
-                        <div class="radios">
-                      <label>
-                        {% if object.importance == "low" %}
-                          <input type="radio" name="importance" value="low" checked> Low
-                        {% else %}
-                          <input type="radio" name="importance" value="low"> Low
-                        {% endif %}
-                      </label>
-                      <label>
-                        {% if object.importance == "medium" %}
-                          <input type="radio" name="importance" value="medium" checked> Medium
-                        {% else %}
-                          <input type="radio" name="importance" value="medium"> Medium
-                        {% endif %}
-                      </label>
-                      <label>
-                        {% if object.importance == "high" %}
-                          <input type="radio" name="importance" value="high" checked> High
-                        {% else %}
-                          <input type="radio" name="importance" value="high"> High
-                        {% endif %}
-                      </label>
-                            </div>
-                    </div>
-
-                    {% else %}
-                        <label for="title"></label>
-                        <input type="text" id="title" name="title" value="Task title">
-
-                        <label for="deadline"></label>
-                        <input type="date" id="deadline" name="deadline" value="{{form.initial.deadline}}">
-
-                        <label for="description"></label>
-                        <textarea id="description" name="description">That's the place for task description...</textarea>
-
-                    <div class="importance-container">
-                      <p>Importance</p>
-                        <div class="radios">
-                      <label>
-                        <input type="radio" name="importance" value="low"> Low
-                      </label>
-                      <label>
-                        <input type="radio" name="importance" value="medium" checked> Medium
-                      </label>
-                      <label>
-                        <input type="radio" name="importance" value="high"> High
-                      </label>
-                            </div>
-                    </div>
-                    {% endif %}
-
+        <div class="task-div">
+            <div class="task-title-div">
+                <label for="title"></label>
+                <input type="text" id="title" name="title" value="Task title">
+            </div>
+            <div class="task-deadline-div">
+                <label for="deadline"></label>
+                <input type="date" id="deadline" name="deadline" value="{{form.initial.deadline}}">
+            </div>
+            <div class="task-description-div">
+                <label for="description"></label>
+                <textarea id="description" name="description">That's the place for task description...</textarea>
+            </div>
+            <div class="task-importance-div">
+                <p>Importance</p>
+                <div class="radios">
+                    <label>
+                    <input type="radio" name="importance" value="low"> Low
+                    </label>
+                    <label>
+                    <input type="radio" name="importance" value="medium" checked> Medium
+                    </label>
+                    <label>
+                    <input type="radio" name="importance" value="high"> High
+                    </label>
                 </div>
-                </div>
-                <div class="save-task">
-                    <input type="submit" class="demo-button" value="Save task">
-                </div>
-            </form>
+            </div>
         </div>
+        <div class="save-task-div">
+            <input type="submit" class="demo-button" value="Save task">
+        </div>
+
+<!--            {% if update %}-->
+<!--                <form action="{% url 'tasks:edit-task' pk=object.pk %}" method="post">-->
+<!--            {% else %}-->
+<!--                <form action="{% url 'tasks:add-task' %}" method="post">-->
+<!--            {% endif %}-->
+<!--            {% csrf_token %}-->
+
+<!--            {% if object %}-->
+<!--                <label for="title_edit"></label>-->
+<!--                <input type="text" id="title_edit" name="title" value="{{object.title}}">-->
+
+<!--                <label for="deadline_edit"></label>-->
+<!--                <input type="date" id="deadline_edit" name="deadline" value="{{object.deadline|date:'Y-m-d'}}">-->
+
+<!--                <label for="description_edit"></label>-->
+<!--                <textarea id="description_edit" name="description">{{object.description}}</textarea>-->
+
+<!--                <div class="importance-container">-->
+<!--                  <p>Importance</p>-->
+<!--                    <div class="radios">-->
+<!--                  <label>-->
+<!--                    {% if object.importance == "low" %}-->
+<!--                      <input type="radio" name="importance" value="low" checked> Low-->
+<!--                    {% else %}-->
+<!--                      <input type="radio" name="importance" value="low"> Low-->
+<!--                    {% endif %}-->
+<!--                  </label>-->
+<!--                  <label>-->
+<!--                    {% if object.importance == "medium" %}-->
+<!--                      <input type="radio" name="importance" value="medium" checked> Medium-->
+<!--                    {% else %}-->
+<!--                      <input type="radio" name="importance" value="medium"> Medium-->
+<!--                    {% endif %}-->
+<!--                  </label>-->
+<!--                  <label>-->
+<!--                    {% if object.importance == "high" %}-->
+<!--                      <input type="radio" name="importance" value="high" checked> High-->
+<!--                    {% else %}-->
+<!--                      <input type="radio" name="importance" value="high"> High-->
+<!--                    {% endif %}-->
+<!--                  </label>-->
+<!--                        </div>-->
+<!--                </div>-->
+
+<!--            {% else %}-->
+<!--                <label for="title"></label>-->
+<!--                <input type="text" id="title" name="title" value="Task title">-->
+
+<!--                <label for="deadline"></label>-->
+<!--                <input type="date" id="deadline" name="deadline" value="{{form.initial.deadline}}">-->
+
+<!--                <label for="description"></label>-->
+<!--                <textarea id="description" name="description">That's the place for task description...</textarea>-->
+
+<!--                <div class="importance-container">-->
+<!--                  <p>Importance</p>-->
+<!--                    <div class="radios">-->
+<!--                  <label>-->
+<!--                    <input type="radio" name="importance" value="low"> Low-->
+<!--                  </label>-->
+<!--                  <label>-->
+<!--                    <input type="radio" name="importance" value="medium" checked> Medium-->
+<!--                  </label>-->
+<!--                  <label>-->
+<!--                    <input type="radio" name="importance" value="high"> High-->
+<!--                  </label>-->
+<!--                        </div>-->
+<!--                </div>-->
+<!--            {% endif %}-->
+
+<!--        </div>-->
+<!--        <div class="task-board">-->
+
+<!--            {% if update %}-->
+<!--                <form action="{% url 'tasks:edit-task' pk=object.pk %}" method="post">-->
+<!--            {% else %}-->
+<!--                <form action="{% url 'tasks:add-task' %}" method="post">-->
+<!--            {% endif %}-->
+<!--                {% csrf_token %}-->
+<!--                <div class="tasks">-->
+<!--                <div class="task-containers-create">-->
+<!--                    {% if object %}-->
+<!--                        <label for="title_edit"></label>-->
+<!--                        <input type="text" id="title_edit" name="title" value="{{object.title}}">-->
+
+<!--                        <label for="deadline_edit"></label>-->
+<!--                        <input type="date" id="deadline_edit" name="deadline" value="{{object.deadline|date:'Y-m-d'}}">-->
+
+<!--                        <label for="description_edit"></label>-->
+<!--                        <textarea id="description_edit" name="description">{{object.description}}</textarea>-->
+
+<!--                    <div class="importance-container">-->
+<!--                      <p>Importance</p>-->
+<!--                        <div class="radios">-->
+<!--                      <label>-->
+<!--                        {% if object.importance == "low" %}-->
+<!--                          <input type="radio" name="importance" value="low" checked> Low-->
+<!--                        {% else %}-->
+<!--                          <input type="radio" name="importance" value="low"> Low-->
+<!--                        {% endif %}-->
+<!--                      </label>-->
+<!--                      <label>-->
+<!--                        {% if object.importance == "medium" %}-->
+<!--                          <input type="radio" name="importance" value="medium" checked> Medium-->
+<!--                        {% else %}-->
+<!--                          <input type="radio" name="importance" value="medium"> Medium-->
+<!--                        {% endif %}-->
+<!--                      </label>-->
+<!--                      <label>-->
+<!--                        {% if object.importance == "high" %}-->
+<!--                          <input type="radio" name="importance" value="high" checked> High-->
+<!--                        {% else %}-->
+<!--                          <input type="radio" name="importance" value="high"> High-->
+<!--                        {% endif %}-->
+<!--                      </label>-->
+<!--                            </div>-->
+<!--                    </div>-->
+
+<!--                    {% else %}-->
+<!--                        <label for="title"></label>-->
+<!--                        <input type="text" id="title" name="title" value="Task title">-->
+
+<!--                        <label for="deadline"></label>-->
+<!--                        <input type="date" id="deadline" name="deadline" value="{{form.initial.deadline}}">-->
+
+<!--                        <label for="description"></label>-->
+<!--                        <textarea id="description" name="description">That's the place for task description...</textarea>-->
+
+<!--                    <div class="importance-container">-->
+<!--                      <p>Importance</p>-->
+<!--                        <div class="radios">-->
+<!--                      <label>-->
+<!--                        <input type="radio" name="importance" value="low"> Low-->
+<!--                      </label>-->
+<!--                      <label>-->
+<!--                        <input type="radio" name="importance" value="medium" checked> Medium-->
+<!--                      </label>-->
+<!--                      <label>-->
+<!--                        <input type="radio" name="importance" value="high"> High-->
+<!--                      </label>-->
+<!--                            </div>-->
+<!--                    </div>-->
+<!--                    {% endif %}-->
+
+<!--                </div>-->
+<!--                </div>-->
+<!--                <div class="save-task">-->
+<!--                    <input type="submit" class="demo-button" value="Save task">-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
 
 {% endblock %}

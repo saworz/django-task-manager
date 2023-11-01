@@ -1,52 +1,76 @@
-input, textarea{
-  border  : 1px solid lightgray;
-  padding : 0 10px;
-  margin-bottom: 5px;
-  background: none;
-  color: white;
-  border-radius: 10px;
-  resize: none;
-}
-
-#title, #title_edit{
-  font-size: 26px;
-  width: 95%;
-  text-align: center;
-}
-
-textarea {
-  height: 53%;
-}
-
-.task-containers-create {
-    width: 240px;
-    height: 400px;
-    margin: 15px;
-    border: 2px solid white;
-    border-radius: 20px;
+input, textarea {
+    background: none;
     color: white;
-    text-decoration: none;
-}
-
-.importance-container {
-  display: inline-block;
-  justify-content: space-between;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-}
-
-.importance-container p{
     border: none;
-}
-.importance-container input {
-    cursor: pointer;
-}
-
-label {
-  margin-right: 10px;
-}
-
-.save-task {
+    outline: none;
     text-align: center;
+    resize: none;
+}
+.task-title-div input {
+    width: 95%;
+    resize: none;
+}
+.task-description-div textarea {
+    height: 95%;
+    width: 95%;
+}
+
+.save-task-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
 }
+
+/*input, textarea{*/
+/*  border  : 1px solid lightgray;*/
+/*  padding : 0 10px;*/
+/*  margin-bottom: 5px;*/
+/*  background: none;*/
+/*  color: white;*/
+/*  border-radius: 10px;*/
+/*  resize: none;*/
+/*}*/
+
+/*#title, #title_edit{*/
+/*  font-size: 26px;*/
+/*  width: 95%;*/
+/*  text-align: center;*/
+/*}*/
+
+/*textarea {*/
+/*  height: 53%;*/
+/*}*/
+
+/*.task-containers-create {*/
+/*    width: 240px;*/
+/*    height: 400px;*/
+/*    margin: 15px;*/
+/*    border: 2px solid white;*/
+/*    border-radius: 20px;*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.importance-container {*/
+/*  display: inline-block;*/
+/*  justify-content: space-between;*/
+/*  border: 1px solid lightgray;*/
+/*  border-radius: 10px;*/
+/*}*/
+
+/*.importance-container p{*/
+/*    border: none;*/
+/*}*/
+/*.importance-container input {*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*label {*/
+/*  margin-right: 10px;*/
+/*}*/
+
+/*.save-task {*/
+/*    text-align: center;*/
+/*    margin-top: 20px;*/
+/*}*/

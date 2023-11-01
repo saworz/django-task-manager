@@ -43,15 +43,12 @@
 
 .home-page-info,
 .about-page-info{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    color: white;
+    text-align: center;
 }
 
 .text-box, .demo-button {
@@ -59,16 +56,13 @@
     text-align: center;
 }
 
-.text-box {
-
-}
-
 .text-box p {
     margin: 10px 0 20px;
 }
 
 .demo-button-div {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     margin: 10px;
 }
 
@@ -88,38 +82,79 @@
     color: black;
 }
 
+.tasks-header-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
 
-/*.header {*/
-/*    min-height: 100vh;*/
-/*    width: 100%;*/
-/*    background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(background.png) center/cover;*/
-/*    display: block;*/
-/*}*/
+.tasks-header-div h1 {
+    color: white;
+}
 
+.sorting-text-div {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
 
+.sort-buttons-div {
+    display: flex;
+    justify-content: center;
+}
 
-/*.nav-links ul {*/
-/*    list-style: none;*/
-/*    display: flex;*/
-/*}*/
+.task-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px white;
+    border-radius: 20px;
+    margin: 30px auto 0;
+    width: 240px;
+    height: 400px;
+}
 
-/*.nav-links ul li {*/
-/*    flex: 1;*/
-/*    text-align: center;*/
-/*}*/
+.task-title-div,
+.task-deadline-div,
+.task-description-div,
+.task-importance-div {
+    border: solid 1px white;
+    width: 95%;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/*.nav-links ul li a {*/
-/*    color: white;*/
-/*    text-decoration: none;*/
-/*}*/
+.task-title-div {
+    height: 50px;
+    font-size: 30px;
+}
 
-/*@media (min-width: 768px){*/
+.task-deadline-div {
+    height: 40px;
+    font-size: 20px;
+}
 
-/*}*/
+.task-description-div {
+    height: 200px;
+    display: block;
+}
 
+.task-importance-div {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 60px;
+}
 
-
-
+.task-importance-div p {
+    margin-bottom: 0;
+}
 
 /*.main-header {*/
 /*    font-size: 40px;*/

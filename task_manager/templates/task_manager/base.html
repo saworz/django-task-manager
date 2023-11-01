@@ -19,6 +19,7 @@
                             <li><a href="{% url 'task_manager:about-page' %}">About</a></li>
 
                             {% if user.is_authenticated %}
+                                <li><a href="{% url 'tasks:add-task' %}">Add new task</a></li>
                                 <li><a href="{% url 'users:profile' %}">My account</a></li>
                                 <li><a href="{% url 'users:logout' %}">Logout</a></li>
                             {% else %}
