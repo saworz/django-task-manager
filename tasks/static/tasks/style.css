@@ -15,6 +15,9 @@ input, textarea {
     width: 95%;
 }
 
+.task-deadline-div input {
+    padding-top: 10px;
+}
 .save-task-div {
     display: flex;
     justify-content: center;

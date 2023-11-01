@@ -137,6 +137,7 @@
 .task-title-div {
     height: 50px;
     font-size: 30px;
+    padding-top: 10px;
 }
 
 .task-deadline-div {

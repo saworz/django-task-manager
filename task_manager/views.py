@@ -8,6 +8,7 @@ class TasksListView(ListView):
     model = Tasks
     template_name = 'task_manager/main_page.html'
     context_object_name = "tasks"
+
     paginate_by = 5
     ordering = "deadline"
 
